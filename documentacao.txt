@@ -1,0 +1,193 @@
+Version 1.18, updated 07/Jun/2021.
+Functions:
+▪ SYMBOL:
+▪ SymbolOpenPositionsTotal(str symbol) - return the number of opened positions.
+▪ SymbolOpenPositionsVolume(str symbol) - return the total volume of opened
+positions.
+▪ SymbolPendingOrdersTotal(str symbol) - return the number of pending orders.
+▪ SymbolPendingOrdersVolume(str symbol) - return the total volume of pending
+orders.
+▪ SymbolPendingOrdersSpecific(str comment, str symbol) - return the number of
+specific open positions by comment.
+▪ SymbolPendingOrdersSpecificType(str symbol, str comment, enum type)
+- return the amount of pending orders by comment and type.
+▪ SymbolPendingOrdersType(str symbol, enum type) - return the amount pending
+orders by type.
+▪ SymbolOpenResult(str symbol) - return the result (profit) from all open positions
+together.
+▪ SymbolOpenPips(str symbol) - return the pips from all open positions.
+▪ SymbolOpenPipsMagic(ulong magic, str symbol) - return open pips from all
+positions by magic number.
+▪ SymbolOpenPercentageMagic(ulong magic, str symbol) - return percentage from
+open positions by magic number.
+▪ SymbolOpenPoints(str symbol) - return open points/pipets trades.
+▪ SymbolOpenPointsMagic(ulong magic, str symbol) - return open points/pipets by
+magic number.
+▪ SymbolOpenPositionsClose(str symbol) - close all open positions.
+▪ SymbolOpenPositionsClosePartial(str symbol, double volume) - close partial all
+open positions.
+▪ SymbolOpenPositionsCloseSpecificMagic(str symbol, long magic) - close specific
+open positions by magic number.
+▪ SymbolOpenPositionsBreakeven(str symbol, double ticket, bool
+CalculateSpread) - breakeven specific position.
+▪ SymbolOpenPositionsBreakevenAll(str symbol, bool CalculateSpread)
+- breakeven all open positions.
+▪ SymbolOpenPositionsSpecific(str symbol, str comment) - return number of
+specific open trades by comment.
+▪ SymbolOpenPositionsSpecificMagic(long magic, str symbol) - return number of
+specific open trades by magic number.
+▪ SymbolOpenPositionsSpecificType(str comment, enum type, str symbol) - close
+specific open trades by comment and type).
+▪ SymbolOpenPositionsCloseSpecific(str symbol, str comment) - close specific
+open trades by comment.
+▪ SymbolOpenPositionsLast(symbol, comment) - return the price from last open
+trade.
+▪ SymbolOpenPositionsLowest(type, symbol) - return the lowest price from open
+trades.
+▪ SymbolOpenPositionsHighest(type, symbol) - return the highest price from open
+trades.
+▪ SymbolOpenResultSpecific(type, symbol) - return the open result of specific
+type of positions.
+▪ SymbolOpenResultSpecificMagic(long magic, str symbol) - return the open result
+of specific positions by magic number.
+▪ SymbolOpenPositionsSpecificTypeMagic(str comment, PosType, str symbol,
+long magic) - return the number of open positions by specific parameters.
+▪ SymbolPendingOrdersCloseAll(str symbol) - close all pending orders.
+▪ SymbolPendingOrdersCloseSell(str symbol) - close all pending sell orders.
+▪ SymbolPendingOrdersCloseBuy(str symbol) - close all pending buy orders.
+▪ SymbolPendingOrdersCloseSpecific(str symbol, str comment) - close specific
+trades by comment.
+SymbolPendingOrdersType(str symbol, enum OrderType) - amount of orders by
+type.
+▪ SymbolPendingOrdersMagic(str symbol, long magic) - return the amount of
+pending orders by magic number.
+▪ SymbolPendingOrdersSpecificTypeMagic(str symbol, str comment, OrderType,
+long magic) - return the amount of pending orders by specific parameters.
+▪ SymbolRiskReward(str symbol, int ticket bool, position) - return the
+risk/reward ration from specific open position (position = true) or pending order
+(position = false). Stop loss and take profit must be specified.
+▪ SymbolPositionReverse(str symbol, bool copy sl and tp, int ticket) - reverse
+specific position.
+▪ SymbolPositionReverseAll(str symbol, bool copy sl and tp) - reverse all open
+positions.
+▪ CandleTime(str separator, bool show seconds) - return the candle remaining
+time in string mode.
+▪ SymbolNormalizeVolume(str symbol, double volume, bool ShowErrorMsg)
+- return the normalized (corrected) the inputed volume.
+▪ SymbolNormalizeDigits(str symbol) - normalize digits to divide on some
+functions.
+▪ SymbolChartClean(str symbol, show date, show price, show oneclicktrade)
+- clean all chart, including date and price (optional).
+▪ SymbolTimeframe(default daily, weekly and monthly timeframes in english or
+specify each one) - return the timeframe in string (ex. M1, M12, H3, Weekly,
+ect).
+▪ SymbolPositionsSwapTotal(str symbol) - return in double the total swap from all
+open positions.
+▪ SymbolPositionsCommissionTotal(str symbol) - return in double the total
+commission from all open positions .
+▪ SymbolPriceChange(double price1, double price2) - return the percentage
+difference from two prices.
+▪ SymbolNormalizePrice(str symbol, double price) - normalize price by tick size.
+▪ SymbolPositionResultMoney(str symbol, double volume, double OpenPrice,
+double TargetPrice, bool invert) - return the result from a position specified
+price target in money.
+▪ SymbolPositionResultPercentage(str symbol, double volume, double
+OpenPrice, double TargetPrice, bool invert) - return the result from a position
+specified price target in percentage.
+▪ SymbolPeriodChangePips(str symbol, period) - return the change in pips
+between the actual price and previous candle close. On daily period, for
+example, you can view the daily pips change.
+▪ SymbolPeriodChangePercentage(str symbol, period) - return the change in
+percentage between the actual price and previous candle close. On daily period,
+for example, you can view the daily percentage change.
+▪ SymbolBID(str symbol) - return the symbol bid price.
+▪ SymbolASK(str symbol) - return the symbol ask price.
+▪ SymbolSpread(str symbol) - return the symbol spread.
+▪ SymbolVolumeByBalance(str symbol, int VolumeFactor) - calculate the
+operation volume by account balance excluding the stop loss factor. Only a
+generic interger factor is used. Big factor = small growth.
+▪ SymbolCheckPriceUsed(str symbol, double price, str comment) - check if
+specific price is occupied by a pending order.
+▪ SymbolCalculateMargin(volume, price, OrderType, symbol) - return the
+required margin to open a trade.
+▪ SymbolDigits(symbol) - return the symbol digits.
+▪ SymbolSwapBuy(symbol) - return the swap to open a buy trade.
+▪ SymbolSwapSell(symbol) - return the swap to open a sell trade.
+▪ SymbolFilling() - return in string mode the symbol filling type (FOK, IOC or
+Return).
+▪ SymbolOpenPositionsBars(str symbol) - return the bars amount of open trades.
+▪ SymbolOpenPositionsCloseAfterSeconds(str symbol, int seconds) - close the
+trades after specified seconds.
+▪ OTHERS:
+▪ FixDatetimeDays(datetime, int days to fix, bool subtract or add) - subtract or
+add days to specific date or time and return it in datetime.
+▪ FixDatetimeHours(datetime, int hours to fix, bool subtract or add) - subtract or
+add hours to specific date or time and return it in datetime.
+▪ FixDatetimeMinutes(datetime, int minutes to fix, bool subtract or add) -
+subtract or add minutes to specific date or timed return it in datetime.
+▪ FixDatetimeSeconds(datetime, int seconds to fix, bool subtract or add) -
+subtract or add seconds to specific date or time and return it in datetime.
+▪ RoundValue(double valuetoround, int round) - return a integer rounded
+number.
+▪ NewCandleCheck(str symbol) - boolean return when new candle are formed.
+▪ ChartHideObjects(long chart, objecttype) - hide all objects from chart.
+▪ ChartGetScale - return the chart scale in integer.
+▪ ChartShowHiddenObjects(long chart) - show all hidden objects from chart.
+▪ IsFirstTime(str filename) - return boolean if is first time running the application.
+▪ GetDeinitReason(int reasoncode) - return in string the reason to program
+deinitialization.
+▪ StringRemoveEmptySpace(StringToRemove, StringNew) - return in string type
+the original modified string.
+▪ CheckIfIsNumber(double ValueToCheck) - return true if a variable is number or
+false if it is not number. Good for text boxes.
+▪ ChartObjectsDeleteAll() - delete all objects on chart.
+▪ IfMarketClosed(str symbol) - boolean return if market is closed.
+▪ KeyboardKeyCode(int KeyID) - return in string mode the key pressed.
+▪ LocalHour() - return the local computer hour.
+▪ LocalMinutes() - return the local computer minutes.
+▪ GMTHour() - return the GMT hour.
+▪ GMTMinutes() - return the GMT minutes.
+▪ ToPoint(double ToPoint) - automatically convert to symbol _Point.
+▪ ScreenDPIFactor() - return the integer screen DPI factor for GUI purposes.
+▪ TradeTime(FromHour, FromMinute, ToHour, ToMinute, ClockType) - return in
+boolean if the actual time is the scheduled trading time (hour and minute to start
+and end).
+▪ CheckStrategyTester - return in boolean if is Strategy Tester or not.
+▪ CandleOpen(int shift) - return in double the open price of determined candle.
+▪ CandleClose (int shift) - return in double the close price of determined candle.
+▪ CandleHigh (int shift) - return in double the high price of determined candle.
+▪ CandleLow (int shift) - return in double the low price of determined candle.
+▪ Cand
+▪ ACCOUNT:
+▪ AccountMode() - return the account mode in string (netting, exchange or
+hedging).
+▪ AccountType() - return the account type in string (demo, competition or real).
+▪ AccountDate(bool show day, bool show month, bool show year, str separator)
+- return in string modethe actual time in day, month and year.
+▪ AccountMonthOfYear(default months or specify each one) - return in
+string mode the actual month of year.
+▪ AccountDayOfWeek(default days or specify each one) - return in string
+mode the actual week day.
+▪ AccountDayOfWeekInt(default days or specify each one) - return in integer
+mode the day of week.
+▪ AccountHour() - return in integer mode the current hour.
+▪ AccountMinutes() - return in integer the current account minutes.
+▪ AccountOpenResult() - return in double mode the result from all open positions.
+▪ AccountOpenPercentage() - return in double mode the result in percentage from
+all open positions.
+▪ AccountCheckConnections(bool CheckServer, bool CheckTradingEnabled, bool
+CheckMQL5, str ServerErrorMsg, str TradingErrorMsg, str MQL5ErrorMsg, str
+MsgCaption) - show a error message when specific connections is not working.
+▪ AccountConnectionState() - return in string type the connection state (on-line or
+off-line).
+▪ AccountPositionsClose(str ErrorPrint) - close all open positions from all symbols.
+▪ AccountCheckReal - return bool type if account is real or not.
+▪ HISTORY:
+▪ HistoryDealLastEntryAsString() - reason of last trade closed.
+▪ HistoryDealLastResult() - result of last closed trade.
+Added:
+▪ SymbolOpenPipsMagic - return open pips trades by magic number.
+▪ SymbolOpenPoints - return open points/pipets trades.
+▪ SymbolOpenPointsMagic - return open points/pipets by magic number.
+▪ SymbolOpenPercentageMagic - return percentage from open positions by magic
+number.
